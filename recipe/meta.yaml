@@ -1,5 +1,4 @@
-{% set version = "0.6.1" %}
-
+{% set version = '0.7.1' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +9,12 @@ package:
 source:
   fn: shinydashboard_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/shinydashboard_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/shinydashboard/shinydashboard_{{ version }}.tar.gz
-  sha256: 1ee38f257433d24455426bc9d85c36f588735a54fbf6143935fed9cccb3bf193
+    - {{ cran_mirror }}/src/contrib/shinydashboard_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/shinydashboard/shinydashboard_{{ version }}.tar.gz
+  sha256: 51a49945c6b8a684111a2ba4b2a5964e3a50610286ce0378e37ae02316620a4e
 
 build:
+  merge_build_host: True  # [win]
   number: 0
   skip: true  # [win32]
   rpaths:
@@ -23,28 +23,38 @@ build:
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
     - r-htmltools >=0.2.6
-    - r-shiny >=0.12.1
+    - r-promises
+    - r-shiny >=1.0.0
   run:
     - r-base
     - r-htmltools >=0.2.6
-    - r-shiny >=0.12.1
+    - r-promises
+    - r-shiny >=1.0.0
 
 test:
   commands:
-    - $R -e "library('shinydashboard')"  # [not win]
+    - $R -e "library('shinydashboard')"           # [not win]
     - "\"%R%\" -e \"library('shinydashboard')\""  # [win]
 
 about:
   home: http://rstudio.github.io/shinydashboard/
-  license: GPL-2
-  summary: |
-    Create dashboards with 'Shiny'. This package provides a theme on top of 'Shiny', making
+  license: GPL (>= 2)
+  summary: Create dashboards with 'Shiny'. This package provides a theme on top of 'Shiny', making
     it easy to create attractive dashboards.
-  license_family: GPL2
+  license_family: GPL3
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
+  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
 
 extra:
   recipe-maintainers:
     - johanneskoester
     - bgruening
+    - daler
+    - jdblischak
+    - cbrueffer
+    - dbast
+    - halldc
