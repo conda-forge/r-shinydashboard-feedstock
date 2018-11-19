@@ -7,18 +7,15 @@ Package license: GPL-2
 
 Feedstock license: BSD 3-Clause
 
-Summary: Create dashboards with 'Shiny'. This package provides a theme on top of 'Shiny', making
-it easy to create attractive dashboards.
-
+Summary: Create dashboards with 'Shiny'. This package provides a theme on top of 'Shiny', making it easy to create attractive dashboards.
 
 
 
 Current build status
 ====================
 
-[![Linux](https://img.shields.io/circleci/project/github/conda-forge/nsoranzo_r-shinydashboard-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/nsoranzo_r-shinydashboard-feedstock)
-[![OSX](https://img.shields.io/travis/conda-forge/nsoranzo_r-shinydashboard-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/nsoranzo_r-shinydashboard-feedstock)
-[![Windows](https://img.shields.io/appveyor/ci/conda-forge/nsoranzo_r-shinydashboard-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/nsoranzo-r-shinydashboard-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/r-shinydashboard-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/r-shinydashboard-feedstock)
 
 Current release info
 ====================
