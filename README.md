@@ -1,11 +1,11 @@
-About r-shinydashboard
-======================
+About r-shinydashboard-feedstock
+================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-shinydashboard-feedstock/blob/main/LICENSE.txt)
 
 Home: http://rstudio.github.io/shinydashboard/
 
 Package license: GPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-shinydashboard-feedstock/blob/main/LICENSE.txt)
 
 Summary: Create dashboards with 'Shiny'. This package provides a theme on top of 'Shiny', making it easy to create attractive dashboards.
 
